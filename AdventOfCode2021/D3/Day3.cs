@@ -24,7 +24,7 @@ namespace AdventOfCode2021.D3
 
 
         /// <summary>
-        /// Main function to test both Part1 and Part2
+        /// Reads the binary data in the provided file
         /// </summary>
         public void ReadBinaryNumbers()
         {
@@ -32,6 +32,9 @@ namespace AdventOfCode2021.D3
             numberOfBits = binaryNumbers[0].Length;
         }
 
+        /// <summary>
+        /// Solution of the first part in day 3 challenge
+        /// </summary>
         public void Part1()
         {
             //Each bit in the gamma rate can be determined by finding the most common bit in the corresponding
@@ -53,9 +56,68 @@ namespace AdventOfCode2021.D3
             Console.WriteLine(powerConsumption);
         }
 
+        /// <summary>
+        /// Solution of the second part in day3 challenge
+        /// </summary>
         public void Part2()
         {
-           
+            int oxygenGeneratorRating = GetOxygenGeneratorRating();
+            int co2ScrubberRating = GetCO2ScrubberRating();
+
+            //life support rating can be determined by multiplying the oxygen generator rating by the CO2 scrubber rating
+            int lifeSupportRating = oxygenGeneratorRating * co2ScrubberRating;
+            Console.WriteLine(lifeSupportRating);
+        }
+
+        /// <summary>
+        /// Calculates oxygen generator rating
+        /// </summary>
+        /// <returns>oxygen generator rating</returns>
+        private int GetOxygenGeneratorRating()
+        {
+            //To find oxygen generator rating, determine the most common value (0 or 1) in the current bit position,
+            //and keep only numbers with that bit in that position.
+            //If 0 and 1 are equally common, keep values with a 1 in the position being considered.
+            List<string> numbers = binaryNumbers.ToList();
+
+            for (int i = 0; i < numberOfBits; i++)
+            {
+                var mostCommonValue = numbers.Count(b => b[i] == '1') >= numbers.Count(b => b[i] == '0') ? '1' : '0';
+
+                numbers.RemoveAll(c => c[i] != mostCommonValue);
+
+                //If you only have one number left, stop; this is the rating value for which you are searching.
+                if (numbers.Count == 1) break;
+
+                //Otherwise, repeat the process, considering the next bit to the right
+            }
+
+            return Convert.ToInt32(numbers.First(), 2);
+        }
+
+        /// <summary>
+        /// Calculates the CO2 scrubber rating
+        /// </summary>
+        /// <returns>CO2 scrubber rating</returns>
+        private int GetCO2ScrubberRating()
+        {
+            //To find CO2 scrubber rating, determine the least common value (0 or 1) in the current bit position,
+            //and keep only numbers with that bit in that position.
+            //If 0 and 1 are equally common, keep values with a 0 in the position being considered.
+            List<string> numbers = binaryNumbers.ToList();
+
+            for (int i = 0; i < numberOfBits; i++)
+            {
+                var leastCommonValue = numbers.Count(c => c[i] == '1') < numbers.Count(c => c[i] == '0') ? '1' : '0';
+
+                numbers.RemoveAll(x => x[i] != leastCommonValue);
+
+                //If you only have one number left, stop; this is the rating value for which you are searching.
+                if (numbers.Count == 1) break;
+                //Otherwise, repeat the process, considering the next bit to the right
+            }
+
+            return Convert.ToInt32(numbers.First(), 2);
         }
     }
 }
