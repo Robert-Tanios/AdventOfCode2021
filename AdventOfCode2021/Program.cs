@@ -10,30 +10,31 @@ namespace AdventOfCode2021
     {
         static void Main(string[] args)
         {
-            TestDay3();
+            TestDay4();
         }
-
 
         private static void TestDay1()
         {
-            D1.Day1 day1 = new D1.Day1();
-            day1.TryMe();
-
+            D1.Day1 d = new D1.Day1();
+            d.TryMe();
         }
 
         private static void TestDay2()
         {
-            D2.Day2 day2 = new D2.Day2();
-            day2.TryMe();
-
+            D2.Day2 d = new D2.Day2();
+            d.TryMe();
         }
-
 
         private static void TestDay3()
         {
-            D3.Day3 day3 = new D3.Day3();
-            day3.TryMe();
+            D3.Day3 d = new D3.Day3();
+            d.TryMe();
+        }
 
+        private static void TestDay4()
+        {
+            D4.Day4 d = new D4.Day4();
+            d.TryMe();
         }
 
     }
