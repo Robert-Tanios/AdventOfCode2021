@@ -31,7 +31,7 @@ namespace AdventOfCode2021.D2
             Console.ReadKey();
         }
 
-         /// <summary>
+        /// <summary>
         /// Initiates the vaiables with the commands from the provided file
         /// </summary>
         public void GetCommands()
@@ -72,7 +72,6 @@ namespace AdventOfCode2021.D2
             }
             Console.WriteLine(horizontalPosition * depth);
         }
-
 
         /// <summary>
         /// Solution of the second part in day2 challenge

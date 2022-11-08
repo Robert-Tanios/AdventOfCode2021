@@ -22,7 +22,7 @@ namespace AdventOfCode2021.D1
             Part2();
             Console.ReadKey();
         }
-        
+
         /// <summary>
         /// Initiates the vaiables with the readings from the provided file
         /// </summary>
@@ -44,7 +44,6 @@ namespace AdventOfCode2021.D1
             }
             Console.WriteLine(result);
         }
-
 
         /// <summary>
         /// Solution of the first part in day 1 challenge

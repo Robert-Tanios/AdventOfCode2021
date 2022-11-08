@@ -22,7 +22,6 @@ namespace AdventOfCode2021.D3
             Console.ReadKey();
         }
 
-
         /// <summary>
         /// Reads the binary data in the provided file
         /// </summary>
