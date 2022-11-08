@@ -10,7 +10,7 @@ namespace AdventOfCode2021
     {
         static void Main(string[] args)
         {
-            TestDay2();
+            TestDay3();
         }
 
 
@@ -25,6 +25,14 @@ namespace AdventOfCode2021
         {
             D2.Day2 day2 = new D2.Day2();
             day2.TryMe();
+
+        }
+
+
+        private static void TestDay3()
+        {
+            D3.Day3 day3 = new D3.Day3();
+            day3.TryMe();
 
         }
 

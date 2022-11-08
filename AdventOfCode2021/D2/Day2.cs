@@ -7,15 +7,22 @@ namespace AdventOfCode2021.D2
 {
     class Day2
     {
+        /// <summary>
+        /// Holds all the commands retreived from provided file
+        /// </summary>
         private List<(string Name, int Value)> commands;
 
         private enum Direction
         {
-            forward = 1, 
-            down = 2, 
+            forward = 1,
+            down = 2,
             up = 3
 
         }
+
+        /// <summary>
+        /// Main function to test both Part1 and Part2
+        /// </summary>
         public void TryMe()
         {
             GetCommands();
@@ -24,6 +31,9 @@ namespace AdventOfCode2021.D2
             Console.ReadKey();
         }
 
+         /// <summary>
+        /// Initiates the vaiables with the commands from the provided file
+        /// </summary>
         public void GetCommands()
         {
             commands = File.ReadAllLines(@"D2\Day2.txt")
@@ -32,7 +42,9 @@ namespace AdventOfCode2021.D2
                 .ToList();
         }
 
-
+        /// <summary>
+        /// Solution of the first part in day2 challenge
+        /// </summary>
         public void Part1()
         {
             var horizontalPosition = 0;
@@ -62,6 +74,9 @@ namespace AdventOfCode2021.D2
         }
 
 
+        /// <summary>
+        /// Solution of the second part in day2 challenge
+        /// </summary>
         public void Part2()
         {
             var horizontalPosition = 0;

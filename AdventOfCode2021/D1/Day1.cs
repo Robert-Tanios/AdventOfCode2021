@@ -7,8 +7,14 @@ namespace AdventOfCode2021.D1
 {
     class Day1
     {
+        /// <summary>
+        /// Holds all the depth readings retrivedf from provided file
+        /// </summary>
         private List<int> depthReadings;
 
+        /// <summary>
+        /// Main function to test both Part1 and Part2
+        /// </summary>
         public void TryMe()
         {
             GetDepthReadings();
@@ -16,11 +22,18 @@ namespace AdventOfCode2021.D1
             Part2();
             Console.ReadKey();
         }
+        
+        /// <summary>
+        /// Initiates the vaiables with the readings from the provided file
+        /// </summary>
         public void GetDepthReadings()
         {
             depthReadings = File.ReadAllLines(@"D1\Day1.txt").Select(int.Parse).ToList();
         }
 
+        /// <summary>
+        /// Solution of the first part in day 1 challenge
+        /// </summary>
         public void Part1()
         {
             int result = 0;
@@ -33,6 +46,9 @@ namespace AdventOfCode2021.D1
         }
 
 
+        /// <summary>
+        /// Solution of the first part in day 1 challenge
+        /// </summary>
         public void Part2()
         {
             int result = 0;
