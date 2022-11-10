@@ -17,6 +17,9 @@ namespace AdventOfCode2021.D5
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// Get alll the line vents from the provided file
+        /// </summary>
         public void ReadLinesOfVents()
         {
             string[] separator = new string[] { " -> " };

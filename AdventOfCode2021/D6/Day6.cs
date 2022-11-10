@@ -9,51 +9,67 @@ namespace AdventOfCode2021.D6
     {
         private List<int> listOfAges;
 
-        public void SetUp()
+        public void TryMe()
+        {
+            Part1();
+
+            Part2();
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// Get all the ages from the provided file
+        /// </summary>
+        public void ReadListOfAges()
         {
             listOfAges = File.ReadAllText(@"D6\Day6.txt").Split(',').Select(int.Parse).ToList();
         }
 
-
+        /// <summary>
+        /// Solution of the Part 1 of the Day 6 challenge
+        /// </summary>
         public void Part1()
         {
-            for (var i = 0; i < 80; i++)
-            {
-                var newFishes = 0;
-
-                for (var j = 0; j < listOfAges.Count; j++)
-                {
-                    if (listOfAges[j] > 0) listOfAges[j]--;
-                    else
-                    {
-                        listOfAges[j] = 6;
-                        newFishes++;
-                    }
-                }
-            }
+            Console.WriteLine("Part 1 answer is {0}", GetNumberOfFishesAfterManyDays(80));
         }
 
+        /// <summary>
+        /// Solution of the Part 2 of the Day 6 challenge
+        /// </summary>
         public void Part2()
         {
-            const int n = 10;
-            var fishCountByAge = new long[n];
+            Console.WriteLine("Part 2 answer is {0}", GetNumberOfFishesAfterManyDays(256));
+        }
+
+        /// <summary>
+        /// Counts the number of fishes after n days
+        /// </summary>
+        /// <param name="nDays">Number of days to calculate fishes after</param>
+        /// <returns></returns>
+        private long GetNumberOfFishesAfterManyDays(int nDays)
+        {
+            ReadListOfAges();
+
+            const int numberOfAges = 10; //9 for the ages of 0 to 8 plus 1 or the newly born
+            var fishesByAgesCount = new long[numberOfAges];
 
             foreach (var age in listOfAges)
             {
-                fishCountByAge[age]++;
+                fishesByAgesCount[age]++;
             }
 
             var zeroAgeIndex = 0;
 
-            for (var i = 0; i < 256; i++)
+            for (var i = 0; i < nDays; i++)
             {
-                fishCountByAge[(zeroAgeIndex + 9) % n] += fishCountByAge[zeroAgeIndex];
-                fishCountByAge[(zeroAgeIndex + 7) % n] += fishCountByAge[zeroAgeIndex];
-                fishCountByAge[zeroAgeIndex] = 0;
+                fishesByAgesCount[(zeroAgeIndex + 9) % numberOfAges] += fishesByAgesCount[zeroAgeIndex];
+                fishesByAgesCount[(zeroAgeIndex + 7) % numberOfAges] += fishesByAgesCount[zeroAgeIndex];
+                fishesByAgesCount[zeroAgeIndex] = 0;
 
-                zeroAgeIndex = (zeroAgeIndex + 1) % n;
+                zeroAgeIndex = (zeroAgeIndex + 1) % numberOfAges;
             }
 
+            return fishesByAgesCount.Sum();
         }
     }
 }
