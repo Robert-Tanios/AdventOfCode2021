@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using AdventOfCode2021.D;
 
-namespace AdventOfCode2021.D2
+namespace AdventOfCode2021.D2 
 {
-    class Day2
+    public class Day2: DayAncestor
     {
         /// <summary>
         /// Holds all the commands retreived from provided file
@@ -23,18 +24,17 @@ namespace AdventOfCode2021.D2
         /// <summary>
         /// Main function to test both Part1 and Part2
         /// </summary>
-        public void TryMe()
+        public override void GetResults()
         {
             GetCommands();
-            Part1();
-            Part2();
-            Console.ReadKey();
+            Console.WriteLine("Day 2 Part 1 answer is {0}", Part1());
+            Console.WriteLine("Day 2 Part 2 answer is {0}", Part2()); 
         }
 
         /// <summary>
         /// Initiates the vaiables with the commands from the provided file
         /// </summary>
-        public void GetCommands()
+        private void GetCommands()
         {
             commands = File.ReadAllLines(@"D2\Day2.txt")
                 .Select(x => x.Split())
@@ -45,7 +45,7 @@ namespace AdventOfCode2021.D2
         /// <summary>
         /// Solution of the first part in day2 challenge
         /// </summary>
-        public void Part1()
+        public override long Part1()
         {
             var horizontalPosition = 0;
             var depth = 0;
@@ -70,13 +70,13 @@ namespace AdventOfCode2021.D2
                         break;
                 }
             }
-            Console.WriteLine(horizontalPosition * depth);
+            return (horizontalPosition * depth);
         }
 
         /// <summary>
         /// Solution of the second part in day2 challenge
         /// </summary>
-        public void Part2()
+        public override long Part2()
         {
             var horizontalPosition = 0;
             var depth = 0;
@@ -106,7 +106,7 @@ namespace AdventOfCode2021.D2
                 }
             }
 
-            Console.WriteLine(horizontalPosition * depth);
+            return (horizontalPosition * depth);
         }
     }
 }

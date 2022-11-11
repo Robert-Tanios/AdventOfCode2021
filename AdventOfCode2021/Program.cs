@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdventOfCode2021.D;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,43 +11,82 @@ namespace AdventOfCode2021
     {
         static void Main(string[] args)
         {
-            TestDay6();
+            TestDay(5);
+
+            TestAllDays();
+            Console.ReadKey();
         }
 
-        private static void TestDay1()
+        private static void TestDay(int dayToTest)
         {
-            D1.Day1 d = new D1.Day1();
-            d.TryMe();
+            var d = new DayAncestor();
+            switch (dayToTest)
+            {
+                case 1:
+                    d = new D1.Day1();
+                    break;
+
+                case 2:
+                    d = new D2.Day2();
+                    break;
+
+                case 3:
+                    d = new D3.Day3();
+                    break;
+
+                case 4:
+                    d = new D4.Day4();
+                    break;
+
+                case 5:
+                    d = new D5.Day5();
+                    break;
+
+                case 6:
+                    d = new D6.Day6();
+                    break;
+
+                case 7:
+                    d = new D7.Day7();
+                    break;
+
+                case 8:
+                    d = new D8.Day8();
+                    break;
+            }
+            d.GetResults();
         }
 
-        private static void TestDay2()
-        {
-            D2.Day2 d = new D2.Day2();
-            d.TryMe();
-        }
 
-        private static void TestDay3()
+        private static void TestAllDays()
         {
-            D3.Day3 d = new D3.Day3();
-            d.TryMe();
-        }
+            var d = new DayAncestor();
 
-        private static void TestDay4()
-        {
-            D4.Day4 d = new D4.Day4();
-            d.TryMe();
-        }
+            d = new D1.Day1();
+            d.GetResults();
 
-        private static void TestDay5()
-        {
-            D5.Day5 d = new D5.Day5();
-            d.TryMe();
+            d = new D2.Day2();
+            d.GetResults();
+
+            d = new D3.Day3();
+            d.GetResults();
+
+            d = new D4.Day4();
+            d.GetResults();
+
+            d = new D5.Day5();
+            d.GetResults();
+
+            d = new D6.Day6();
+            d.GetResults();
+
+            d = new D7.Day7();
+            d.GetResults();
+
+            d = new D8.Day8();
+            d.GetResults();
         }
-        private static void TestDay6()
-        {
-            D6.Day6 d = new D6.Day6();
-            d.TryMe();
-        }
+ 
 
     }
 }

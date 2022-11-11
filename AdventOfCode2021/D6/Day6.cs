@@ -1,26 +1,25 @@
-﻿using System;
+﻿using AdventOfCode2021.D;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
 namespace AdventOfCode2021.D6
 {
-    public class Day6
+    public class Day6 : DayAncestor
     {
         private List<int> listOfAges;
 
-        public void TryMe()
+        public override void GetResults()
         {
-            Part1();
-
-            Part2();
-            Console.ReadKey();
+            Console.WriteLine("Day 6 Part 1 answer is {0}", Part1());
+            Console.WriteLine("Day 6 Part 2 answer is {0}", Part2());
         }
 
         /// <summary>
         /// Get all the ages from the provided file
         /// </summary>
-        public void ReadListOfAges()
+        private void ReadListOfAges()
         {
             listOfAges = File.ReadAllText(@"D6\Day6.txt").Split(',').Select(int.Parse).ToList();
         }
@@ -28,17 +27,17 @@ namespace AdventOfCode2021.D6
         /// <summary>
         /// Solution of the Part 1 of the Day 6 challenge
         /// </summary>
-        public void Part1()
+        public override long Part1()
         {
-            Console.WriteLine("Part 1 answer is {0}", GetNumberOfFishesAfterManyDays(80));
+            return GetNumberOfFishesAfterManyDays(80);
         }
 
         /// <summary>
         /// Solution of the Part 2 of the Day 6 challenge
         /// </summary>
-        public void Part2()
+        public override long Part2()
         {
-            Console.WriteLine("Part 2 answer is {0}", GetNumberOfFishesAfterManyDays(256));
+            return GetNumberOfFishesAfterManyDays(256);
         }
 
         /// <summary>

@@ -1,26 +1,26 @@
-﻿using System;
+﻿using AdventOfCode2021.D;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
 namespace AdventOfCode2021.D5
 {
-    public class Day5
+    public class Day5 : DayAncestor
     {
         private List<(int X1, int Y1, int X2, int Y2)> vents;
 
-        public void TryMe()
+        public override void GetResults()
         {
             ReadLinesOfVents();
-            Part1();
-            Part2();
-            Console.ReadKey();
+            Console.WriteLine("Day 5 Part 1 answer is {0}", Part1());
+            Console.WriteLine("Day 5 Part 2 answer is {0}", Part2());
         }
 
         /// <summary>
         /// Get alll the line vents from the provided file
         /// </summary>
-        public void ReadLinesOfVents()
+        private void ReadLinesOfVents()
         {
             string[] separator = new string[] { " -> " };
             vents = File.ReadAllLines(@"D5\Day5.txt")
@@ -36,7 +36,7 @@ namespace AdventOfCode2021.D5
         /// <summary>
         /// Solution of the Part 1 of the Day 5 challenge
         /// </summary>
-        public void Part1()
+        public override long Part1()
         {
             var points = new int[1000, 1000];
 
@@ -64,13 +64,13 @@ namespace AdventOfCode2021.D5
             //count the number of cells that have their value >= 2
             var overlapsCount = points.Cast<int>().Count(v => v >= 2);
 
-            Console.WriteLine(overlapsCount);
+            return overlapsCount;
         }
 
         /// <summary>
         /// Solution of the Part 2 of the Day 5 challenge
         /// </summary>
-        public void Part2()
+        public override long Part2()
         {
             var points = new int[1000, 1000];
             //the lines in your list will only ever be horizontal, vertical, or a diagonal line at exactly 45 degrees.
@@ -92,7 +92,7 @@ namespace AdventOfCode2021.D5
             }
 
             var overlapsCount = points.Cast<int>().Count(p => p >= 2);
-            Console.WriteLine(overlapsCount);
+            return overlapsCount;
         }
     }
 }

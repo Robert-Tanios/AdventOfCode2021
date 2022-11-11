@@ -1,12 +1,13 @@
-﻿using System;
+﻿using AdventOfCode2021.D;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq; 
+using System.Linq;
 
 namespace AdventOfCode2021.D4
 {
 
-    public class Day4
+    public class Day4 : DayAncestor
     {
         private List<int> numbers;
         private readonly List<List<List<int>>> boards = new List<List<List<int>>>();
@@ -14,12 +15,11 @@ namespace AdventOfCode2021.D4
         /// <summary>
         /// Main function to test both Part1 and Part2
         /// </summary>
-        public void TryMe()
+        public override void GetResults()
         {
             ReadBoards();
-            Part1();
-            Part2();
-            Console.ReadKey();
+            Console.WriteLine("Day 4 Part 1 answer is {0}", Part1());
+            Console.WriteLine("Day 4 Part 2 answer is {0}", Part2()); 
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace AdventOfCode2021.D4
         /// <summary>
         /// Solution of the Part 1 in day3 challenge
         /// </summary>
-        public void Part1()
+        public override long Part1()
         {
             int Bingo = 0;
 
@@ -71,13 +71,12 @@ namespace AdventOfCode2021.D4
                             //sum of all unmarked numbers on the winning board
                             //Then, multiply that sum by the number that was just called when the board won (number) to get the final score
                             Bingo = board.SelectMany(x => x).Where(x => x != -1).Sum() * number;
-                            Console.WriteLine(Bingo);
-                            return;
+                            return Bingo;
                         }
                     }
                 }
             }
-            Console.WriteLine(Bingo);
+            return Bingo;
         }
 
         /// <summary>
@@ -106,7 +105,7 @@ namespace AdventOfCode2021.D4
         /// <summary>
         /// Solution of the second part in day 4 challenge
         /// </summary>
-        public void Part2()
+        public override long Part2()
         {
             var finalScore = 0;
 
@@ -114,7 +113,7 @@ namespace AdventOfCode2021.D4
             {
                 //Mark the current number
                 markHit(number);
-                
+
                 var winningBoards = new List<List<List<int>>>();
 
                 foreach (var board in boards)
@@ -142,7 +141,7 @@ namespace AdventOfCode2021.D4
                 }
             }
 
-            Console.WriteLine(finalScore);
+            return finalScore;
         }
     }
 }

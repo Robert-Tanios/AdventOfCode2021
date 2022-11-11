@@ -1,11 +1,12 @@
-﻿using System;
+﻿using AdventOfCode2021.D;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
 namespace AdventOfCode2021.D1
 {
-    class Day1
+    class Day1 : DayAncestor
     {
         /// <summary>
         /// Holds all the depth readings retrivedf from provided file
@@ -15,18 +16,17 @@ namespace AdventOfCode2021.D1
         /// <summary>
         /// Main function to test both Part1 and Part2
         /// </summary>
-        public void TryMe()
+        public override void GetResults()
         {
             GetDepthReadings();
-            Part1();
-            Part2();
-            Console.ReadKey();
+            Console.WriteLine("Day 1 Part 1 answer is {0}", Part1());
+            Console.WriteLine("Day 1 Part 2 answer is {0}", Part2());
         }
 
         /// <summary>
         /// Initiates the vaiables with the readings from the provided file
         /// </summary>
-        public void GetDepthReadings()
+        private void GetDepthReadings()
         {
             depthReadings = File.ReadAllLines(@"D1\Day1.txt").Select(int.Parse).ToList();
         }
@@ -34,7 +34,7 @@ namespace AdventOfCode2021.D1
         /// <summary>
         /// Solution of the first part in day 1 challenge
         /// </summary>
-        public void Part1()
+        public override long Part1()
         {
             int result = 0;
 
@@ -42,13 +42,13 @@ namespace AdventOfCode2021.D1
             {
                 if (depthReadings[i] > depthReadings[i - 1]) result++;
             }
-            Console.WriteLine(result);
+            return result;
         }
 
         /// <summary>
         /// Solution of the first part in day 1 challenge
         /// </summary>
-        public void Part2()
+        public override long Part2()
         {
             int result = 0;
 
@@ -59,9 +59,7 @@ namespace AdventOfCode2021.D1
                     result++;
                 }
             }
-
-            Console.WriteLine(result);
-
+            return result;
         }
     }
 }
