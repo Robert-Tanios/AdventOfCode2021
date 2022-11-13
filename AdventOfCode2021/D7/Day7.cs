@@ -25,7 +25,9 @@ namespace AdventOfCode2021.D7
             positions = File.ReadAllText(@"D7\Day7.txt").Split(',').Select(int.Parse).ToList();
         }
 
-
+        /// <summary>
+        /// Solution of the Part 1 of the Day 7 challenge
+        /// </summary>
         public override long Part1()
         {
             GetAllPositions();
@@ -44,7 +46,9 @@ namespace AdventOfCode2021.D7
             return minAlignmentNeededFuel;
         }
 
-
+        /// <summary>
+        /// Solution of the Part 2 of the Day 7 challenge
+        /// </summary>
         public override long Part2()
         {
             GetAllPositions();

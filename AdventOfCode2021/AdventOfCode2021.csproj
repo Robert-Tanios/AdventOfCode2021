@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\DayAncestor.cs" />
+    <Compile Include="D10\Day10.cs" />
     <Compile Include="D1\Day1.cs" />
     <Compile Include="D2\Day2.cs" />
     <Compile Include="D3\Day3.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="D6\Day6.cs" />
     <Compile Include="D7\Day7.cs" />
     <Compile Include="D8\Day8.cs" />
+    <Compile Include="D9\Day9.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -59,6 +61,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="D10\Day10.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="D1\Day1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -81,6 +86,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="D8\Day8.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="D9\Day9.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
