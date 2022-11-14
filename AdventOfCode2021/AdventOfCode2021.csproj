@@ -45,6 +45,9 @@
   <ItemGroup>
     <Compile Include="Common\DayAncestor.cs" />
     <Compile Include="D10\Day10.cs" />
+    <Compile Include="D11\Day11.cs" />
+    <Compile Include="D12\Day12.cs" />
+    <Compile Include="D13\Day13.cs" />
     <Compile Include="D1\Day1.cs" />
     <Compile Include="D2\Day2.cs" />
     <Compile Include="D3\Day3.cs" />
@@ -62,6 +65,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="D10\Day10.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="D11\Day11.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="D12\Day12.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="D13\Day13.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="D1\Day1.txt">
