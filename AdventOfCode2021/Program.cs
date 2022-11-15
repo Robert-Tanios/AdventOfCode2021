@@ -11,7 +11,7 @@ namespace AdventOfCode2021
     {
         static void Main(string[] args)
         {
-            TestDay(12);
+            TestDay(13);
 
             //TestAllDays();
             Console.ReadKey();
@@ -69,6 +69,10 @@ namespace AdventOfCode2021
                 case 12:
                     d = new D12.Day12();
                     break;
+
+                case 13:
+                    d = new D13.Day13();
+                    break;
             }
             d.GetResults();
         }
@@ -112,6 +116,9 @@ namespace AdventOfCode2021
             d.GetResults();
 
             d = new D12.Day12();
+            d.GetResults();
+
+            d = new D13.Day13();
             d.GetResults();
         }
  
