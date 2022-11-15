@@ -17,6 +17,7 @@ namespace AdventOfCode2021.D4
         /// </summary>
         public override void GetResults()
         {
+            Console.WriteLine("################## Day 04 ##################");
             ReadBoards();
             Console.WriteLine("Day 4 Part 1 answer is {0}", Part1());
             Console.WriteLine("Day 4 Part 2 answer is {0}", Part2()); 
@@ -50,7 +51,7 @@ namespace AdventOfCode2021.D4
         /// <summary>
         /// Solution of the Part 1 in day3 challenge
         /// </summary>
-        public override long Part1()
+        public override string Part1()
         {
             int Bingo = 0;
 
@@ -71,12 +72,12 @@ namespace AdventOfCode2021.D4
                             //sum of all unmarked numbers on the winning board
                             //Then, multiply that sum by the number that was just called when the board won (number) to get the final score
                             Bingo = board.SelectMany(x => x).Where(x => x != -1).Sum() * number;
-                            return Bingo;
+                            return Bingo.ToString();
                         }
                     }
                 }
             }
-            return Bingo;
+            return Bingo.ToString();
         }
 
         /// <summary>
@@ -105,7 +106,7 @@ namespace AdventOfCode2021.D4
         /// <summary>
         /// Solution of the second part in day 4 challenge
         /// </summary>
-        public override long Part2()
+        public override string Part2()
         {
             var finalScore = 0;
 
@@ -141,7 +142,7 @@ namespace AdventOfCode2021.D4
                 }
             }
 
-            return finalScore;
+            return finalScore.ToString();
         }
     }
 }

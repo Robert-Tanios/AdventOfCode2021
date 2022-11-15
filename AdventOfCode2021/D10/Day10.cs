@@ -14,6 +14,7 @@ namespace AdventOfCode2021.D10
 
         public override void GetResults()
         {
+            Console.WriteLine("################## Day 10 ##################");
             ReadInputFile();
             Console.WriteLine("Day 10 Part 1 answer is {0}", Part1());
             Console.WriteLine("Day 10 Part 2 answer is {0}", Part2());
@@ -53,7 +54,7 @@ namespace AdventOfCode2021.D10
         /// <summary>
         /// Solution of the Part 1 of the Day 10 challenge
         /// </summary>
-        public override long Part1()
+        public override string Part1()
         {
 
             Dictionary<char, int> points = new Dictionary<char, int>() { ['}'] = 1197, [')'] = 3, [']'] = 57, ['>'] = 25137, };
@@ -85,7 +86,7 @@ namespace AdventOfCode2021.D10
                 }
             }
 
-            return syntaxErrorScore;
+            return syntaxErrorScore.ToString();
         }
 
 
@@ -97,7 +98,7 @@ namespace AdventOfCode2021.D10
         /// <summary>
         /// Solution of the Part 2 of the Day 10 challenge
         /// </summary>
-        public override long Part2()
+        public override string Part2()
         {
             Dictionary<char, int> points = new Dictionary<char, int>() { ['('] = 1, ['['] = 2, ['{'] = 3, ['<'] = 4 };
 
@@ -142,7 +143,7 @@ namespace AdventOfCode2021.D10
             scores.Sort();
             var middleScore = scores[scores.Count / 2];
 
-            return middleScore;
+            return middleScore.ToString();
         }
     }
 }

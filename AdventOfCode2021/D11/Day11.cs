@@ -16,7 +16,7 @@ namespace AdventOfCode2021.D11
 
         public override void GetResults()
         {
-
+            Console.WriteLine("################## Day 11 ##################");
             Console.WriteLine("Day 11 Part 1 answer is {0}", Part1());
             Console.WriteLine("Day 11 Part 2 answer is {0}", Part2());
         }
@@ -59,7 +59,7 @@ namespace AdventOfCode2021.D11
         /// <summary>
         /// Solution of the Part 1 of the Day 11 challenge
         /// </summary>
-        public override long Part1()
+        public override string Part1()
         {
             ReadInputFile();
 
@@ -108,14 +108,14 @@ namespace AdventOfCode2021.D11
                 result += flashes;
             }
 
-            return result;
+            return result.ToString();
         }
 
 
         /// <summary>
         /// Solution of the Part 2 of the Day 11 challenge
         /// </summary>
-        public override long Part2()
+        public override string Part2()
         {
             ReadInputFile();
 
@@ -170,7 +170,7 @@ namespace AdventOfCode2021.D11
                 result += flashes;
             }
 
-            return (step + 1);
+            return (step + 1).ToString();
         }
 
 

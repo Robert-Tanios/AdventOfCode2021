@@ -15,6 +15,7 @@ namespace AdventOfCode2021.D7
 
         public override void GetResults()
         {
+            Console.WriteLine("################## Day 07 ##################");
             Console.WriteLine("Day 7 Part 1 answer is {0}", Part1());
             Console.WriteLine("Day 7 Part 2 answer is {0}", Part2());
         }
@@ -28,7 +29,7 @@ namespace AdventOfCode2021.D7
         /// <summary>
         /// Solution of the Part 1 of the Day 7 challenge
         /// </summary>
-        public override long Part1()
+        public override string Part1()
         {
             GetAllPositions();
             var minAlignmentNeededFuel = int.MaxValue;
@@ -43,13 +44,13 @@ namespace AdventOfCode2021.D7
                 minAlignmentNeededFuel = Math.Min(alignmentNeededFuel, minAlignmentNeededFuel);
             }
 
-            return minAlignmentNeededFuel;
+            return minAlignmentNeededFuel.ToString();
         }
 
         /// <summary>
         /// Solution of the Part 2 of the Day 7 challenge
         /// </summary>
-        public override long Part2()
+        public override string Part2()
         {
             GetAllPositions();
             var minAlignmentNeededFuel = int.MaxValue;
@@ -69,7 +70,7 @@ namespace AdventOfCode2021.D7
                 minAlignmentNeededFuel = Math.Min(alignmentNeededFuel, minAlignmentNeededFuel);
             }
 
-            return minAlignmentNeededFuel;
+            return minAlignmentNeededFuel.ToString();
         }
     }
 }

@@ -17,6 +17,7 @@ namespace AdventOfCode2021.D3
         /// </summary>
         public override void GetResults()
         {
+            Console.WriteLine("################## Day 03 ##################");
             ReadBinaryNumbers();
             Console.WriteLine("Day 3 Part 1 answer is {0}", Part1());
             Console.WriteLine("Day 3 Part 2 answer is {0}", Part2()); 
@@ -34,7 +35,7 @@ namespace AdventOfCode2021.D3
         /// <summary>
         /// Solution of the first part in day 3 challenge
         /// </summary>
-        public override long Part1()
+        public override string Part1()
         {
             //Each bit in the gamma rate can be determined by finding the most common bit in the corresponding
             //position of all numbers in the diagnostic report
@@ -52,20 +53,20 @@ namespace AdventOfCode2021.D3
             //The power consumption can then be found by multiplying the gamma rate by the epsilon rate.
             int powerConsumption = Convert.ToInt32(gammaRate, 2) * Convert.ToInt32(epsilonRate, 2);
 
-            return powerConsumption;
+            return powerConsumption.ToString();
         }
 
         /// <summary>
         /// Solution of the second part in day3 challenge
         /// </summary>
-        public override long Part2()
+        public override string Part2()
         {
             int oxygenGeneratorRating = GetOxygenGeneratorRating();
             int co2ScrubberRating = GetCO2ScrubberRating();
 
             //life support rating can be determined by multiplying the oxygen generator rating by the CO2 scrubber rating
             int lifeSupportRating = oxygenGeneratorRating * co2ScrubberRating;
-            return lifeSupportRating;
+            return lifeSupportRating.ToString();
         }
 
         /// <summary>

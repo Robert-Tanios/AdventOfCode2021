@@ -9,9 +9,9 @@ namespace AdventOfCode2021.D
     {
         public virtual void GetResults() { }
 
-        public virtual long Part1() { return -999; }
+        public virtual string Part1() { return "Part 1 under construction"; }
 
-        public virtual long Part2() { return -999; }
+        public virtual string Part2() { return "Part 2 under construction"; }
 
     }
 }

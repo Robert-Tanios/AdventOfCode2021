@@ -12,6 +12,7 @@ namespace AdventOfCode2021.D5
 
         public override void GetResults()
         {
+            Console.WriteLine("################## Day 05 ##################");
             ReadLinesOfVents();
             Console.WriteLine("Day 5 Part 1 answer is {0}", Part1());
             Console.WriteLine("Day 5 Part 2 answer is {0}", Part2());
@@ -36,7 +37,7 @@ namespace AdventOfCode2021.D5
         /// <summary>
         /// Solution of the Part 1 of the Day 5 challenge
         /// </summary>
-        public override long Part1()
+        public override string Part1()
         {
             var points = new int[1000, 1000];
 
@@ -64,13 +65,13 @@ namespace AdventOfCode2021.D5
             //count the number of cells that have their value >= 2
             var overlapsCount = points.Cast<int>().Count(v => v >= 2);
 
-            return overlapsCount;
+            return overlapsCount.ToString();
         }
 
         /// <summary>
         /// Solution of the Part 2 of the Day 5 challenge
         /// </summary>
-        public override long Part2()
+        public override string Part2()
         {
             var points = new int[1000, 1000];
             //the lines in your list will only ever be horizontal, vertical, or a diagonal line at exactly 45 degrees.
@@ -92,7 +93,7 @@ namespace AdventOfCode2021.D5
             }
 
             var overlapsCount = points.Cast<int>().Count(p => p >= 2);
-            return overlapsCount;
+            return overlapsCount.ToString();
         }
     }
 }

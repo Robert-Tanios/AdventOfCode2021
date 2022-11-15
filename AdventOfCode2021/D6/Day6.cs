@@ -12,6 +12,7 @@ namespace AdventOfCode2021.D6
 
         public override void GetResults()
         {
+            Console.WriteLine("################## Day 06 ##################");
             Console.WriteLine("Day 6 Part 1 answer is {0}", Part1());
             Console.WriteLine("Day 6 Part 2 answer is {0}", Part2());
         }
@@ -27,17 +28,17 @@ namespace AdventOfCode2021.D6
         /// <summary>
         /// Solution of the Part 1 of the Day 6 challenge
         /// </summary>
-        public override long Part1()
+        public override string Part1()
         {
-            return GetNumberOfFishesAfterManyDays(80);
+            return GetNumberOfFishesAfterManyDays(80).ToString();
         }
 
         /// <summary>
         /// Solution of the Part 2 of the Day 6 challenge
         /// </summary>
-        public override long Part2()
+        public override string Part2()
         {
-            return GetNumberOfFishesAfterManyDays(256);
+            return GetNumberOfFishesAfterManyDays(256).ToString();
         }
 
         /// <summary>

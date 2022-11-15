@@ -69,23 +69,23 @@ namespace AdventOfCode2021.D12
         /// <summary>
         /// Solution of the Part 1 of the Day 12 challenge
         /// </summary>
-        public override long Part1()
+        public override string Part1()
         {
             Explore("start", connections, new Stack<string>(), true);
 
-            return counter;
+            return counter.ToString();
         }
 
         /// <summary>
         /// Solution of the Part 2 of the Day 12 challenge
         /// </summary>
-        public override long Part2()
+        public override string Part2()
         {
             counter = 0;
 
             Explore("start", connections, new Stack<string>(), false);
 
-            return counter;
+            return counter.ToString();
         }
 
 

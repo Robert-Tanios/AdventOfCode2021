@@ -26,6 +26,7 @@ namespace AdventOfCode2021.D2
         /// </summary>
         public override void GetResults()
         {
+            Console.WriteLine("################## Day 02 ##################");
             GetCommands();
             Console.WriteLine("Day 2 Part 1 answer is {0}", Part1());
             Console.WriteLine("Day 2 Part 2 answer is {0}", Part2()); 
@@ -45,7 +46,7 @@ namespace AdventOfCode2021.D2
         /// <summary>
         /// Solution of the first part in day2 challenge
         /// </summary>
-        public override long Part1()
+        public override string Part1()
         {
             var horizontalPosition = 0;
             var depth = 0;
@@ -70,13 +71,13 @@ namespace AdventOfCode2021.D2
                         break;
                 }
             }
-            return (horizontalPosition * depth);
+            return (horizontalPosition * depth).ToString();
         }
 
         /// <summary>
         /// Solution of the second part in day2 challenge
         /// </summary>
-        public override long Part2()
+        public override string Part2()
         {
             var horizontalPosition = 0;
             var depth = 0;
@@ -106,7 +107,7 @@ namespace AdventOfCode2021.D2
                 }
             }
 
-            return (horizontalPosition * depth);
+            return (horizontalPosition * depth).ToString();
         }
     }
 }

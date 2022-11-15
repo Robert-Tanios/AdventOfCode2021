@@ -15,6 +15,7 @@ namespace AdventOfCode2021.D9
 
         public override void GetResults()
         {
+            Console.WriteLine("################## Day 09 ##################");
             Console.WriteLine("Day 9 Part 1 answer is {0}", Part1());
             Console.WriteLine("Day 9 Part 2 answer is {0}", Part2());
         }
@@ -56,7 +57,7 @@ namespace AdventOfCode2021.D9
         /// <summary>
         /// Solution of the Part 1 of the Day 9 challenge
         /// </summary>
-        public override long Part1()
+        public override string Part1()
         {
             ReadInputFile();
             var result = 0;
@@ -69,7 +70,7 @@ namespace AdventOfCode2021.D9
                 }
             }
 
-            return (result);
+            return result.ToString();
 
         }
 
@@ -98,7 +99,7 @@ namespace AdventOfCode2021.D9
         /// <summary>
         /// Solution of the Part 2 of the Day 9 challenge
         /// </summary>
-        public override long Part2()
+        public override string Part2()
         {
             long result = 0;
             var basinSizes = new List<long>();
@@ -120,7 +121,7 @@ namespace AdventOfCode2021.D9
             }
             result = basinSizes.OrderByDescending(x => x).Take(3).Aggregate(1L, (x, y) => x * y);
 
-            return (result);
+            return result.ToString();
         }
     }
 

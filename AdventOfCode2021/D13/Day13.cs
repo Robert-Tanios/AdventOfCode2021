@@ -20,7 +20,7 @@ namespace AdventOfCode2021.D13
             ReadInputFile();
             Fold();
             Console.WriteLine("Day 13 Part 2 answer is CJHAZHKU");
-            Console.WriteLine("############################################");
+
         }
 
 
@@ -114,18 +114,18 @@ namespace AdventOfCode2021.D13
         /// <summary>
         /// Solution of the Part 1 of the Day 13 challenge
         /// </summary>
-        public override long Part1()
+        public override string Part1()
         {
-            return 0;
+            return "0";
         }
 
 
         /// <summary>
         /// Solution of the Part 2 of the Day 13 challenge
         /// </summary>
-        public override long Part2()
+        public override string Part2()
         {
-            return 0;
+            return "0";
         }
     }
 }

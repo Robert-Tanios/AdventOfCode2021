@@ -14,6 +14,7 @@ namespace AdventOfCode2021.D8
 
         public override void GetResults()
         {
+            Console.WriteLine("################## Day 08 ##################");
             Console.WriteLine("Day 8 Part 1 answer is {0}", Part1());
             Console.WriteLine("Day 8 Part 2 answer is {0}", Part2());
         }
@@ -38,7 +39,7 @@ namespace AdventOfCode2021.D8
         /// <summary>
         /// Solution of the Part 1 of the Day 8 challenge
         /// </summary>
-        public override long Part1()
+        public override string Part1()
         {
             GetDigitsAndDisplay();
             //one : 2
@@ -47,14 +48,14 @@ namespace AdventOfCode2021.D8
             //eight : 7
             var count = digitsAndDisplay.SelectMany(x => x.Display).Count(x => x.Count() is 2 || x.Count() is 3 || x.Count() is 4 || x.Count() is 7);
 
-            return (count);
+            return (count.ToString());
         }
 
 
         /// <summary>
         /// Solution of the Part 2 of the Day 8 challenge
         /// </summary>
-        public override long Part2()
+        public override string Part2()
         {
             var result = 0;
 
@@ -105,7 +106,7 @@ namespace AdventOfCode2021.D8
                 result += outputValue;
             }
 
-            return (result);
+            return (result.ToString());
 
             string GetSharedSegments(params string[] digits) => new string("abcdefg".Where(x => digits.All(c => c.Contains(x))).ToArray());
 
