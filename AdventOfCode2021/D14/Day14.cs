@@ -97,10 +97,10 @@ namespace AdventOfCode2021.D14
 
             return result.ToString();
 
-            void Add(string s, long v = 1)
+            void Add(string k, long v = 1)
             {
-                if (polimerPairs.ContainsKey(s)) polimerPairs[s] += v;
-                else polimerPairs[s] = v;
+                if (polimerPairs.ContainsKey(k)) polimerPairs[k] += v;
+                else polimerPairs[k] = v;
             }
         }
     }
